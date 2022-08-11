@@ -40,6 +40,11 @@ header.active {
   z-index: 1000;
 }
 
+header.active #logo,
+header.active button {
+  display: none;
+}
+
 #desktop-nav, #desktop-nav ul {
   display: none;
 }
