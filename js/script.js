@@ -2,34 +2,43 @@
 // Menu mobile toggle active
 //
 
-const header = document.querySelector('header');
-const hamburger = document.querySelector('.menu-bars');
-const icon = document.querySelector('.menu-bars i');
+const h = document.querySelector('header');
+const m = document.querySelector('.menu-bars');
+const i = document.querySelector('.menu-bars i');
 
 // Classes for close menu
-const classNames = ['fa-x', 'nav-link'];
+const x = ['fa-bars', 'nav-link'];
 
-hamburger.addEventListener('click', () => {
-  header.classList.add('active');
-  icon.classList.add('fa-x');
-  icon.classList.remove('fa-bars');
+m.addEventListener('click', () => {
+  // console.log('hamburger');
+  if (h.classList.contains('active')) {
+    h.classList.remove('active');
+    i.classList.remove('fa-x');
+    i.classList.add('fa-bars');
+  } else {
+    h.classList.add('active');
+    i.classList.add('fa-x');
+    i.classList.remove('fa-bars');
+  }
 });
 
-header.addEventListener('click', (event) => {
-  const clickedElementClassName = event.target.classList[0];
-  const shouldToggle = classNames.some((className) => className === clickedElementClassName);
+h.addEventListener('click', (event) => {
+  // console.log('header');
+  const z = event.target.classList[0];
+  const t = x.some((y) => y === z);
 
-  if (shouldToggle && header.classList.contains('active')) {
-    header.classList.remove('active');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-x');
+  if (t && h.classList.contains('active')) {
+    h.classList.remove('active');
+    i.classList.add('fa-bars');
+    i.classList.remove('fa-x');
   }
 });
 
 window.addEventListener('resize', () => {
-  if (header.classList.contains('active')) {
-    header.classList.remove('active');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-x');
+  // console.log('window');
+  if (h.classList.contains('active')) {
+    h.classList.remove('active');
+    i.classList.add('fa-bars');
+    i.classList.remove('fa-x');
   }
 });
