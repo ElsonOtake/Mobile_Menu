@@ -41,9 +41,38 @@ header.active {
 }
 
 header.active #logo,
-header.active button {
+header.active button,
+header.active .nav-link i {
   display: none;
 }
+
+header.active #desktop-nav {
+  display: block;
+}
+
+header.active #desktop-nav ul {
+  display: block;
+  padding-top: 108px;
+}
+
+header.active li {
+  width: calc(100% - 48px);
+  margin: auto;
+  padding: 24px 0 15px 16px;
+  text-align: left;
+  border-bottom: 1px solid #6f6c6b;
+}
+
+header.active .nav-link {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #fff;
+}
+
+/* .nav-link:hover {
+  border: 1px solid #d2d5db;
+} */
 
 #desktop-nav, #desktop-nav ul {
   display: none;
