@@ -1,6 +1,12 @@
-# curriculum-cr-training-mobile-menu
+# Portfolio
+
+> Personal portfolio to present technical knowledge and project samples. 
 
 
-This repo host an initial code for the tasks performed during the Code Reviewers training.
+## Author
 
-Application is based on this [Figma design](https://www.figma.com/file/t3EJUCAEViw3QasuJLPLVT/Microverse-Student-Potfolio-Templates-Main?node-id=1%3A1471).
+👤 **Elson Otake**
+
+- GitHub: [@elsonotake](https://github.com/elsonotake)
+- Twitter: [@elsonotake](https://twitter.com/elsonotake)
+- LinkedIn: [elsonotake](https://linkedin.com/in/elsonotake)
