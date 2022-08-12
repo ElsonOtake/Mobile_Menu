@@ -27,8 +27,17 @@ header {
   color: white;
 }
 
-#desktop-nav, #desktop-nav ul {
-  display: none;
+header.active {
+  position: sticky;
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #3c3a39;
+  z-index: 1000;
 }
 
 #logo {
@@ -39,16 +48,88 @@ header {
   line-height: 24px;
 }
 
+.menu-bars i {
+  width: 18px;
+  height: 12px;
+  color: white;
+}
+
+header.active #logo,
+header.active .nav-link i {
+  display: none;
+}
+
+#desktop-nav,
+#desktop-nav ul {
+  display: none;
+}
+
 .menu-bars {
   background: transparent;
   border: none;
   outline: none;
 }
 
-.menu-bars i {
-  width: 18px;
-  height: 12px;
-  color: white;
+header.active #desktop-nav,
+header.active .menu-bars {
+  display: block;
+}
+
+header.active .menu-bars {
+  display: flex;
+  width: calc(100% - 38px);
+  justify-content: flex-end;
+  padding-top: 60px;
+  color: #67798e;
+  font-size: large;
+}
+
+header.active #desktop-nav ul {
+  display: block;
+  padding-top: 34px;
+}
+
+li {
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 43px;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+}
+
+.card-stacks li {
+  background: rgba(255, 255, 255, 0.24) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.project-stacks li {
+  display: inline;
+  border: 1px solid #8993a4;
+  padding: 10px 12px;
+  background: transparent;
+  color: #fff;
+  transition: 350ms;
+  cursor: pointer;
+}
+
+header.active li {
+  width: calc(100% - 48px);
+  margin: auto;
+  padding: 24px 0 15px 16px;
+  text-align: left;
+  border-bottom: 1px solid #6f6c6b;
+}
+
+header.active .nav-link {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #fff;
 }
 
 main {
@@ -227,24 +308,6 @@ main {
   right: 0;
 }
 
-li {
-  list-style: none;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 43px;
-  text-align: center;
-  color: #fff;
-  padding: 5px;
-}
-
-.card-stacks li {
-  background: rgba(255, 255, 255, 0.24) !important;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
 .gtime {
   background-image: url("../media/png/gtime.png");
 }
@@ -266,16 +329,6 @@ li {
   flex-wrap: wrap;
   grid-gap: 15px;
   padding: 20px 0;
-}
-
-.project-stacks li {
-  display: inline;
-  border: 1px solid #8993a4;
-  padding: 10px 12px;
-  background: transparent;
-  color: #fff;
-  transition: 350ms;
-  cursor: pointer;
 }
 
 .project-stacks li:hover {
