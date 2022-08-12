@@ -1,44 +1,43 @@
-//
-// Menu mobile toggle active
-//
-
-const h = document.querySelector('header');
-const m = document.querySelector('.menu-bars');
-const i = document.querySelector('.menu-bars i');
+const header = document.querySelector('header');
+const hamburger = document.querySelector('.menu-bars');
+const icon = document.querySelector('.menu-bars i');
 
 // Classes for close menu
-const x = ['fa-bars', 'nav-link'];
+const classNames = ['fa-bars', 'nav-link'];
 
-m.addEventListener('click', () => {
-  // console.log('hamburger');
-  if (h.classList.contains('active')) {
-    h.classList.remove('active');
-    i.classList.remove('fa-x');
-    i.classList.add('fa-bars');
+const removeActive = () => {
+  // console.log('removeActive');
+  header.classList.remove('active');
+  icon.classList.remove('fa-x');
+  icon.classList.add('fa-bars');
+};
+
+const addActive = () => {
+  // console.log('addActive');
+  header.classList.add('active');
+  icon.classList.add('fa-x');
+  icon.classList.remove('fa-bars');
+};
+
+hamburger.addEventListener('click', () => {
+  if (header.classList.contains('active')) {
+    removeActive();
   } else {
-    h.classList.add('active');
-    i.classList.add('fa-x');
-    i.classList.remove('fa-bars');
+    addActive();
   }
 });
 
-h.addEventListener('click', (event) => {
-  // console.log('header');
-  const z = event.target.classList[0];
-  const t = x.some((y) => y === z);
+header.addEventListener('click', (event) => {
+  const clickedElementClassName = event.target.classList[0];
+  const shouldToggle = classNames.some((className) => className === clickedElementClassName);
 
-  if (t && h.classList.contains('active')) {
-    h.classList.remove('active');
-    i.classList.add('fa-bars');
-    i.classList.remove('fa-x');
+  if (shouldToggle && header.classList.contains('active')) {
+    removeActive();
   }
 });
 
 window.addEventListener('resize', () => {
-  // console.log('window');
-  if (h.classList.contains('active')) {
-    h.classList.remove('active');
-    i.classList.add('fa-bars');
-    i.classList.remove('fa-x');
+  if (header.classList.contains('active')) {
+    removeActive();
   }
 });
